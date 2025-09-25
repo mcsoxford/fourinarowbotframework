@@ -61,28 +61,3 @@ def runAgainstRandom(myMoveChooser, numGames=1000):
 def runAgainstOther(myMoveChooser, otherMoveChooser, numGames=1000):
     data = runNGames(myMoveChooser, otherMoveChooser, numGames)
     printResultSummary(data)
-
-import time
-from theMobot.theMobot import theMobot
-from Moe import moe
-from Monty import monty
-from Morris.Morris import morris
-from human import human
-from ai4_player import ai4_playerWrapper
-from ai3_player import ai3_playerWrapper
-from ai2_player import ai2_playerWrapper
-from ai1_player import ai1_playerWrapper
-
-if __name__ == "__main__":
-
-    began = time.time()
-    # print(runSingleGame(theMobot,human),(6,7))
-    runAgainstOther(ai1_playerWrapper, human,50)
-    print(time.time() - began)
-    exit()
-
-    boardGrid = [['' for _ in range(7)] for __ in range(7)]
-    began = time.time()
-    for _ in range(100000):
-        morris(boardGrid, "R", True)
-    print(time.time()-began)
